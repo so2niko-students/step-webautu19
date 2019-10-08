@@ -1,0 +1,19 @@
+/* Универсальный селектор */
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Теговые селекторы */
+body{
+    background-color: black;
+    color: white;
+}
+
+li{
+    color: #b1aeac;
+}
+/* Классовые селектор */
+.s2{
+    font-size: 133%;
+}
+
