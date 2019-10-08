@@ -1,0 +1,12 @@
+h3,body{
+    margin: 0;
+    padding: 0;
+}
+.abs{
+    color: red;
+    position: absolute;
+    left: 100px;
+    /* right: 5px; */
+    /* top: 0; */
+    bottom: 0;
+}
