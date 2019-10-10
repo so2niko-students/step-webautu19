@@ -1,0 +1,19 @@
+.el{
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    background-color: rgba(11,33,155,0.4);
+}
+
+.i1{
+    background-color: rgba(211,33,55,0.4);
+    position: relative;
+    left: 100px;
+}
+
+.i3{
+    background-color: rgba(11,133,55,0.4);
+    position: relative;
+    left: 15px;
+    top: 80px;
+}

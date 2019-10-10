@@ -1,0 +1,10 @@
+.box{
+    width: 200px;
+    height: 150px;
+    background-color: dodgerblue;
+    transform: rotate(10deg);
+/*    border: 5px solid yellow;*/
+/*    border-radius: 50%;*/
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+}

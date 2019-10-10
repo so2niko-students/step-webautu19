@@ -1,0 +1,36 @@
+.head{
+    width: 500px;
+    height: 600px;
+    background-color: antiquewhite;
+    border-radius: 33%;
+    position: absolute;
+    top: 150px;
+    left: 100px;
+}
+
+.eye{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: brown;
+    position: relative;
+}
+.left.eye{
+    left: 30%;
+    top: 150px;
+}
+
+.eye.right{
+    left: 60%;
+    top: 100px;
+}
+
+.nose{
+    position: relative;
+    width: 25px;
+    height: 100px;
+    background-color: burlywood;
+    border-radius: 15%;
+    left: calc((100% - 25px) / 2);
+    top: 75px;
+}
