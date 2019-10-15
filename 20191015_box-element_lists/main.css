@@ -1,0 +1,58 @@
+.box{
+    width: 100px;
+    border: 1px solid black;
+    height: 50px;
+}
+
+.el{
+    height: 10px;
+    width: 10px;
+    border: 1px solid grey;
+    float: left;
+    /*margin: 1px;*/
+    background-color: aqua;
+    /*outline: 1px solid grey;*/
+    box-sizing: border-box;
+}
+
+li{
+    /*list-style-image: url("head.jpg");*/
+    border: 1px solid pink;
+    list-style-position: inside;
+    width: 100px;
+}
+
+li:hover{
+    background-color: black;
+    color: wheat;
+    border: 0;
+    width: 150px;
+}
+.el:hover{
+
+    background-color: black;
+}
+
+/* unvisited link */
+a:link {
+    color: #FF0000;
+}
+
+/* visited link */
+a:visited {
+    color: #00FF00;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00FF;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+.el:first-child{
+    border-color: red;
+}
