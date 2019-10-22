@@ -1,0 +1,9 @@
+Добавить закладку
+git remote add origin https://github.com/so2niko/step-test.git
+
+
+Затолкать репозиторий
+git push origin master
+
+Клонировать репозиторий
+git clone https://github.com/so2niko/step-test.git
