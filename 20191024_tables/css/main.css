@@ -1,0 +1,27 @@
+td{
+    border: 1px solid grey;
+}
+body{
+    margin: 0;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.nav{
+    height: 100px;
+}
+.rate1{
+    height: 125px;
+}
+.rate2{
+    height: 150px;
+}
+.info{
+    height: 200px;
+}
+.hw{
+    height: 250px;
+}
