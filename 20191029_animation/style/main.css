@@ -1,0 +1,76 @@
+@keyframes textC{
+    from{
+        color: black;
+        font-size: 26px;
+    }
+    to{
+        color: white;
+        font-size: 4px;
+    }
+}
+
+@keyframes rota{
+    0%{
+        transform: rotate(0deg);
+        color: black;
+    }
+    50%{
+        color: white;
+    }
+    100%{
+        color: red;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes screenSaver{
+    0%{
+        top: 0;
+        left: 0;
+    }
+
+    100%{
+        top: calc(100% - 51px);
+        left: calc(100% - 51px);
+    }
+}
+
+.ani1{
+    animation: textC 10s infinite alternate;
+    /*обязательные параметры: имя длительность количество_раз*/
+}
+
+.ani2{
+    display: inline-block;
+    animation: rota 10s 5s forwards;
+}
+
+.ani{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border: 1px solid grey;
+    top: 0;
+    left: 0;
+    animation: screenSaver 10s infinite alternate;
+}
+.ani3{
+    animation-timing-function: linear;
+    background-color: rgba(149, 144, 153, 0.424);
+}
+.ani4{
+    animation-timing-function: ease;
+    background-color: rgba(207, 209, 108, 0.424);
+}
+.ani5{
+    animation-timing-function: ease-in;
+    background-color: rgba(86, 165, 103, 0.424);
+}
+.ani6{
+    animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    background-color: rgba(180, 54, 54, 0.424);
+}
+
+.ani:hover{
+    animation-play-state: paused;
+}

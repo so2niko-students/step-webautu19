@@ -1,0 +1,20 @@
+.loader{
+    height: 50px;
+    width: 500px;
+    border: 2px solid grey;
+    background-color: rgba(204, 199, 192, 0.52);
+    border-radius: 25px;
+}
+
+.load{
+    height: 50px;
+    width: 25%;
+    background-color: brown;
+    border-radius: 23px;
+    transition: width 5s, background-color 5s;
+}
+
+.load:hover{
+    width: 100%;
+    background-color: green;
+}
