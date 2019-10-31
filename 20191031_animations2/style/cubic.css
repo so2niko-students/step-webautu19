@@ -1,0 +1,210 @@
+.pos{
+    position: absolute;
+    top: 200px;
+    left: 200px;
+}
+
+.cubic{
+    position: relative;
+    width: 250px;
+}
+
+.cubic > div{
+    width: 50px;
+    height: 50px;
+    background-color: tan;
+    margin: 15px;
+    display: inline-block;
+    position: relative;
+    animation-timing-function: cubic-bezier(0.1, 0.78, 0.96, 0.38);
+    animation-duration: 2s;
+}
+div.c4{
+    background-color: rgb(124, 48, 48);
+}
+/*cubic 2 animation*/
+@keyframes cub2{
+    0%{
+        top: -60px;
+        height: 0;
+    }
+    25%{
+        top: 0;
+        height: 50px;
+    }
+}
+.c2{
+    animation: cub2 infinite;
+    width: 0;
+}
+/* cubic 3 animation*/
+@keyframes cub3{
+    0%{
+        right: -60px;
+        width: 0;
+    }
+    25%{
+        right: 0;
+        width: 50px;
+    }
+    50%{
+        right: 80px;
+        width: 50px;
+    }
+    51%{
+        width: 0;
+        right: -60px;
+    }
+    100%{
+        width: 0;
+        right: -60px;
+        
+    }
+}
+.c3{
+    animation: cub3 infinite ease-in;
+    animation-delay: 0.5s;
+    /*TODO: timing-function add*/
+}
+
+/* cubic 5 and 6*/
+@keyframes cub56{
+    0%{
+        top: 0;
+    }
+    25%{
+        top: -80px;
+    }
+    50%{
+        top: 0;
+    }
+    100%{
+        top: 0;
+    }
+}
+
+.c5,.c6{
+    animation: cub56 infinite;
+    animation-delay: 1.5s;
+}
+
+/* cubic 9*/
+@keyframes cub9{
+    0%{
+        right: -60px;
+        width: 0;
+    }
+    25%{
+        right: 0;
+        width: 50px;
+        top: 0;
+    }
+    50%{
+        top: -80px;
+        width: 50px;
+    }
+    75%{
+        top: 0;
+        left: 0;
+        width: 50px;
+    }
+    80%{
+        left: -35px;
+        background-color: teal;
+    }
+    100%{
+        left: -35px;
+        width: 0px;
+    }
+}
+
+div.c9{
+    background-color: teal;
+    width: 0;
+    /*TODO: color-animation add*/
+}
+.c9{
+    animation: cub9 infinite;
+    animation-delay: 1s;
+}
+
+/*cubic 8*/
+@keyframes cub8{
+    0%{
+        height: 0;
+        bottom: -60px
+    }
+    25%{
+        bottom: 0;
+        height: 50px;
+    }
+    50%{
+        height: 50px;
+        background-color: tomato;
+    }
+    51%{
+        background-color: tan;
+    }
+    75%{
+        height: 50px;
+        left: 0;
+    }
+    100%{
+        height: 50px;
+        left: -80px;
+        background-color: tan;
+    }
+}
+div.c8{
+    background-color: tomato;
+    height: 0;
+}
+.c8{
+    animation: cub8 infinite;
+    animation-delay: 1.5s;
+}
+
+/* main animation*/
+@keyframes main{
+    0%{
+        top: 0;
+        left: 0;
+    }
+    12.5%{
+        top: -15px;
+        left: 0;
+    }
+    25%{
+        top: 0;
+        left: 0;
+    }
+    37.5%{
+        top: 15px;
+        left: 0;
+    }
+    50%{
+        top: 0;
+        left: 0;
+    }
+    62.5%{
+        top: 0;
+        left: -15px;
+    }
+    75%{
+        top: 0;
+        left: 0;
+    }
+    87.5%{
+        top: 0;
+        left: -15px;
+    }
+    100%{
+        top: 0;
+        left: 0;
+    }
+}
+.cubic{
+    top: 0;
+    left: 0;
+    animation: main 2s 1.5s infinite cubic-bezier(0.1, 0.78, 0.96, 0.38);;
+}
