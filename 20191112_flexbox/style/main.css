@@ -1,0 +1,60 @@
+.example{
+    border: 1px solid grey;
+    /*flex-container*/
+    display: flex;
+    height: 600px;
+    /*Изменение направления оси - Горизонтальная/вертикальная
+    row - default
+    column - вертикальная
+    row-reverse
+    column-reverse
+    */
+    /* flex-direction: column; */
+    /*Возможность переноса контента*/
+    /* flex-wrap: wrap; */
+
+    /* flex-flow: wrap-reverse row-reverse; */
+    /*flex-flow - direction + wrap */
+
+    /*Выравнивание по главной оси*/
+    /*
+    flex-start - по умолчанию
+    flex-end
+    center
+    space-around
+    space-between
+    */
+    justify-content: center;
+
+    /*Выравнивание по побочной оси*/
+    /* align-items: center; */
+
+    /* align-content: center; */
+
+}
+
+.card{
+    border: 1px solid red;
+    width: 200px;
+    height: 350px;
+    /* font-size: 33px; */
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    /* flex-grow: 1; */
+    flex-basis: 1;
+}
+
+.main{
+    /*Порядок в очереди элементов.
+    по умолчанию == 0
+    применяется не к родителю, а к элементу-потомку
+    */
+    /* order: 1; */
+
+    /*возможность «вырастать» при необходимости*/
+    /* flex-grow: 2; */
+
+    /* flex-shrink: 2; */
+
+    align-self: center;
+}
