@@ -1,0 +1,28 @@
+header{
+    /* height: 51px; */
+    padding: 32px 0;
+    background-color: #221e1e77;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    position: sticky;
+    top: 0;
+}
+a{
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    /* font-weight: 600; */
+    margin: 0 10px;
+    text-transform: uppercase;
+}
+.l-menu{
+    margin-left: 100px;
+}
+.r-menu{
+    margin-right: 100px;
+}
+.low-size{
+    width: 18px;
+}
