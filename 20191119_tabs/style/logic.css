@@ -1,0 +1,75 @@
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.examples{
+    width: 100px;
+}
+
+.wrapper{
+    width: 150px;
+    height: 130px;
+}
+.colors{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: grey;
+}
+
+#red:checked~.colors{
+    background-color: red;
+}
+#red:checked~[for="red"]{
+    background-color: red;
+}
+
+#yellow:checked~.colors{
+    background-color: yellow;
+}
+#yellow:checked~[for="yellow"]{
+    background-color: yellow;
+    color: black;
+}
+#green:checked~.colors{
+    background-color: green;
+}
+#green:checked~[for="green"]{
+    background-color: green;
+    color: black;
+}
+#border:checked~.colors{
+    border: 2px solid black;
+}
+#border:checked~[for="border"]{
+    background-color: white;
+    color: black;
+}
+.hide_checkbox:checked~#hide{
+    /* color: white; */
+    /* font-size: 1px; */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#border,
+#green,
+#red,
+#yellow{
+    display: none;
+}
+.tipa_button{
+    background-color: black;
+    color: white;
+    padding: 7px;
+    border-radius: 5px;
+    margin: 1px;
+    display: inline-block;
+    border: 1px solid black;
+    cursor: pointer;
+    user-select: none;
+    font-family: Arial;
+    font-weight: 400;
+}
