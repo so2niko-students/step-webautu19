@@ -1,0 +1,22 @@
+body{
+    margin: 0;
+    height: 100vh;
+}
+
+header{
+    height: 100px;
+    background-color: rgba(66, 40, 40, 0.685);
+    color: white;
+}
+aside.left{
+    background-color: yellow;
+    height: 400px;
+}
+aside.right{
+    background-color: chartreuse;
+    height: 600px;
+}
+content{
+    background-color: rgba(99, 144, 144, 0.87);
+    height: 600px;
+}

@@ -1,0 +1,12 @@
+h1,h2,h4,h5,h6{
+    background-color: darkgray;
+}
+h3{
+    background-color: darkkhaki;
+}
+
+@media screen and (max-width: 575px){
+    .world{
+        display: none;
+    }
+}
