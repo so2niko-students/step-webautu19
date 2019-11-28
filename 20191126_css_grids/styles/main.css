@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0 auto;
+    width: 1200px;
+    min-height: 100vh;
+    display: grid;
+    grid-template: 40px 40px 200px 200px 40px 300px 40px 300px 40px 100px / repeat(9, 1fr);
+    grid-template-areas: "header header header header header header header header header"
+                        "welcome welcome welcome welcome welcome date date date date"
+                        "news__top-big news__top-big news__top-big news__top-big news__top-big news__top-1 news__top-1 news__top-2 news__top-2"
+                        "news__top-big news__top-big news__top-big news__top-big news__top-big news__top-3 news__top-3 news__top-4 news__top-4"
+                        "title__news title__news title__news title__news title__news title__news title__news title__news title__news"
+                        "news__mid-1 news__mid-1 news__mid-1 news__mid-2 news__mid-2 news__mid-2 news__mid-3 news__mid-3 news__mid-3"
+                        "title__sport title__sport title__sport title__sport title__sport title__sport title__sport title__sport title__sport"
+                        "news__sport-1 news__sport-1 news__sport-1 news__sport-2 news__sport-2 news__sport-2 news__sport-3 news__sport-3 news__sport-3"
+                        "title__weather title__weather title__weather title__weather title__weather title__weather title__weather title__weather title__weather"
+                        "weather weather weather weather weather weather weather weather weather";
+    grid-gap: 15px;
+}
+
+div, header{
+    /* border: 1px solid black; */
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header{ grid-area: header;}
+.welcome{ grid-area: welcome;}
+.date{ grid-area: date;}
+.news__top-big{ grid-area: news__top-big;}
+.news__top-1{ grid-area: news__top-1;}
+.news__top-2{ grid-area: news__top-2;}
+.news__top-3{ grid-area: news__top-3;}
+.news__top-4{ grid-area: news__top-4;}
+.title__news{ grid-area: title__news;}
+.news__mid-1{ grid-area: news__mid-1;}
+.news__mid-2{ grid-area: news__mid-2;}
+.news__mid-3{ grid-area: news__mid-3;}
+.title__sport{ grid-area: title__sport;}
+.news__sport-1{ grid-area: news__sport-1;}
+.news__sport-2{ grid-area: news__sport-2;}
+.news__sport-3{ grid-area: news__sport-3;}
+.title__weather{ grid-area: title__weather;}
+.weather{ 
+    grid-area: weather;
+    grid-column: 1 / -1;
+}
