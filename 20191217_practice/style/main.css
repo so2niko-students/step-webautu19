@@ -1,0 +1,41 @@
+[class^="info-"]{
+    background-color: aqua;
+    border: 2px dotted grey;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas: 'main work'
+                         'main education'
+                         'footer footer';
+    grid-template-rows: 1fr 1fr 100px;
+    grid-template-columns: 4fr 7fr;
+}
+
+.info-main{
+    grid-area: main;
+}
+
+.info-work{
+    grid-area: work;
+}
+
+.info-education{
+    grid-area: education;
+}
+
+footer{
+    background-color: blueviolet;
+    grid-area: footer;
+}
+
+@media (max-width : 600px){
+    body{
+        grid-template-rows: 100vh 50vh 50vh 100px;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'main' 'work' 'education' 'footer';
+    }
+}
