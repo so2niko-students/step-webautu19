@@ -13,7 +13,9 @@ let ivan = {
             г. Вайс-Сити,
             ул. Героев, 200 / 3.14`,
         id          : 12309855784535485
-    }
+    },
+    password : '',
+    weapon : ''
 },
     konek = {
         name    : 'Кonek',
@@ -70,3 +72,14 @@ a.age++;
 console.log(a);
 console.log(b);
 
+const letters = 'abcdefghijklmnopqrstuvwxyz_$!0123456789@#';
+const pasLen = Math.floor(Math.random() * (10 - 4) + 4 + 1);
+const weapons = ['Меч-Кладенец', 'Палка-выручалка', "Булава - всему голова", "Ножик"];
+// random * (max - min) + min + 1
+for(let i = 0; i < pasLen; i++){
+    ivan.password += letters[Math.floor(Math.random() * letters.length)];
+}
+
+ivan.weapon = weapons[Math.floor(Math.random() * weapons.length)];
+
+console.log(ivan);
