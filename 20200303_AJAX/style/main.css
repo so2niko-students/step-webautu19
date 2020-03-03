@@ -1,0 +1,13 @@
+td{
+    border: 1px solid grey;
+    padding: 5px;
+}
+table{
+    border-collapse: collapse;
+    margin: 15px;
+}
+/* tr:first-child td{
+    color: white;
+    background-color: black;
+    font-size: 16pt;
+} */
