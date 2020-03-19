@@ -38,5 +38,6 @@
             "type":"image/png"
         }
     ],
+    "theme_color":"#ff1212",
     "display":"standalone"
 }
