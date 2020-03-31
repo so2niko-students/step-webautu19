@@ -9,6 +9,7 @@ export class ModelArticles{
     link = 'https://spreadsheets.google.com/feeds/cells/1vfqiUzsqWXu5ACCihPusUqksQWxhcVfsuHeKYBWjhv8/1/public/full?alt=json';
     data = [];
     authors = new Set();
+    dates = new Set();
 
     constructor(){
         this.rowSize = this.cellHeaders.length;
@@ -38,8 +39,12 @@ export class ModelArticles{
 
         for(let art of this.data){
             this.authors.add(art.author);
+            this.dates.add(art.time.split(' ')[0]);//make array of unic dates
+
+            art.isFeedback = Math.random() > .5;
         }
-        console.log(this.authors);
+        
+        console.log(this.data);
     }
 
     getSearchedData(s){
@@ -90,5 +95,37 @@ export class ModelArticles{
 
     get authorsArr(){
         return [...this.authors];
+    }
+
+    get datesArr(){
+        return [...this.dates];
+    }
+
+    filterBy(arr){
+        if(arr.length == 0){
+            return this.data;
+        }
+
+        const filtered = this.data.filter(msg => arr.indexOf(msg.author) > -1);
+
+        return filtered;
+    }
+
+    filterByDate(date){
+        const regDate = new RegExp(date);
+        const filtered = this.data.filter(msg => regDate.test(msg.time));
+        return filtered;
+    }
+
+    filterByCategory(category = 'all'){
+        if(category === 'all'){
+            return this.data;
+        }
+
+        const isFeedBack = category === 'feedbacks';
+
+        const filtered = this.data.filter(article => article.isFeedback === isFeedBack);
+
+        return filtered;
     }
 }

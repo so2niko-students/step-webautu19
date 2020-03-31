@@ -13,7 +13,12 @@ export class ControllerArticles{
         // this.view = new ViewArticles(this.handleSearch.bind(this));
         // 2 - явная подстановка контекста
         
-        this.view = new ViewArticles(this.handleSearch);
+        this.view = new ViewArticles(
+            this.handleSearch, 
+            this.handleFilter,
+            this.handleChooseDate,
+            this.handleClickCategory
+            );
         // 3 - использование стрелочной функции in function expression
 
         
@@ -24,8 +29,12 @@ export class ControllerArticles{
         this.model.loadArticles()
             .then(data => {
                 this.view.renderArticles(data);
+
                 const authors = this.model.authorsArr;
                 this.view.renderAuthors(authors);
+                
+                const dates = this.model.datesArr;
+                this.view.renderDates(dates);
             });
     }
 
@@ -33,5 +42,27 @@ export class ControllerArticles{
         const search = this.view.searchVal;
         const data = this.model.getSearchedData(search);
         this.view.renderArticles(data);
+    }
+
+    handleFilter = (e) => {
+        const authors = this.view.authorsCheck;
+        console.log('I am in filter', authors);
+        const filteredData = this.model.filterBy(authors);
+
+        this.view.renderArticles(filteredData);
+    }
+
+    handleChooseDate = () => {
+        const choosedDate = this.view.choosedDate;
+        const filteredData = this.model.filterByDate(choosedDate);
+
+        this.view.renderArticles(filteredData);
+    }
+
+    handleClickCategory = (ev) => {
+        const category = ev.target.dataset.category;
+        const filtered = this.model.filterByCategory(category);
+
+        this.view.renderArticles(filtered);
     }
 }
