@@ -35,6 +35,7 @@ function onBodyClick(){
         ctxMenu.isShow = false;
     }    
 }
+
 (_ => {
     document.body.addEventListener('contextmenu', onBodyClickCtxMenu);
     document.body.addEventListener('click', onBodyClick);
