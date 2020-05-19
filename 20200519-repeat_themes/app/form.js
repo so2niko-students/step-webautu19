@@ -20,6 +20,6 @@ function onSubmit(ev){
 }
 
 function sendFeedback(name, email, opinion){
-    console.log(name, email, opinion);
+    fetch(`./feedback.php?name=${name}&email=${email}&opinion=${opinion}`);
 }
 
