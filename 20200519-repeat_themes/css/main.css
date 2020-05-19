@@ -1,0 +1,15 @@
+.w-200{
+    width: 200px;
+}
+
+.pos-fix{
+    position: fixed;
+}
+
+body{
+    height: 100vh;
+}
+
+.list-group-item:hover{
+    background-color: silver;
+}
