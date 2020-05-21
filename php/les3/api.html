@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="form-api">
+        <input type="text" value="1" class="inp" data-id="a">
+        <input type="text" placeholder="+ - * /" 
+        class="inp" data-id="s" value="+">
+        <input type="text" value="2" class="inp" data-id="b">
+        <input type="submit">
+    </form>
+    <h3>
+        <span class="answ" data-id="a">0</span>
+        <span class="answ" data-id="s">+</span>
+        <span class="answ" data-id="b">0</span> = 
+        <span class="answ" data-id="res">0</span>
+    </h3>
+    <nav>
+        <form class="form-auth">
+            <input type="text" class="inp-auth" 
+            data-id="login" placeholder="login">
+            <input type="password" class="inp-auth" 
+            data-id="password" placeholder="password">
+            <input type="submit">
+        </form>
+    </nav>
+    <script src="app/main.js" type="module"></script>
+</body>
+</html>
