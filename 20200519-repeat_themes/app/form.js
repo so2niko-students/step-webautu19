@@ -20,6 +20,6 @@ function onSubmit(ev){
 }
 
 function sendFeedback(name, email, opinion){
-    fetch(`./feedback.php?name=${name}&email=${email}&opinion=${opinion}`);
+    fetch(`https://script.google.com/macros/s/AKfycbwjxgyrYvq2awc7f8iE2xmY5ggRqeEjdlAdvCSq3YV5Bdr8fF4/exec?name=${name}&email=${email}&opinion=${opinion}`);
 }
 
