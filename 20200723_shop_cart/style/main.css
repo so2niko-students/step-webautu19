@@ -1,0 +1,24 @@
+.product_list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card_product{
+    border: 1px solid grey;
+    width: 300px;
+    padding: 15px;
+    margin: 15px;
+}
+
+.card_product img{
+    width: 270px;
+}
+
+.cart_logo{
+    position: fixed;
+    top: 0;
+    right: 0;
+    font: 33pt Helvetica;
+    font-weight: 800;
+    color: blueviolet;
+}
