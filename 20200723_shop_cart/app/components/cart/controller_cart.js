@@ -15,6 +15,4 @@ export default class ControllerCart{
         const count = this.model.addToCart(id);
         this.view.renderCartCount(count);
     }
-
-
 }

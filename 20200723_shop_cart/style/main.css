@@ -33,4 +33,42 @@ body{
     font: 33pt Helvetica;
     font-weight: 800;
     color: blueviolet;
+    cursor: pointer;
+    transition: 1s color;
+}
+
+.cart_logo:hover{
+    color: rgb(95, 18, 168);
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    background-color: rgba(117, 117, 115, 0.644);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.modal .modal_cart{
+    background-color: cornsilk;
+}
+
+.modal table{
+    border-collapse: collapse;
+}
+
+.modal table td{
+    border-top: 1px solid grey;
+    padding: 15px;
+}
+
+.modal .inp_product_cart{
+    width: 50px;
 }
