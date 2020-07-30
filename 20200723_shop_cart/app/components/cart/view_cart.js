@@ -4,29 +4,42 @@ export default class ViewCart{
     btnCart = document.querySelector('.cart_logo');
     closeClass = 'close';
 
-    constructor(handleOpenModal){
-        this.btnCart.addEventListener('click', handleOpenModal);
+    constructor(listeners){
+        this.btnCart.addEventListener('click', listeners.open);
+        this.listeners = listeners;
     }
 
     renderCartCount(count){
         this.domCartCount.innerText = count;
     }
 
-    renderModal(products){
+    renderModal({ products, price}){
         //Показываем модалку
         this.modalWindow.classList.remove(this.closeClass);
         const trs = products.map(this.renderProduct).join('');
 
         this.modalWindow.innerHTML = `<div class="modal_cart">
-        <button class="btn_close">X</button>
+        <div class="cart_buttons">
+            <button class="btn_modal_close">X</button>
+        </div>
         <table>
             ${ trs }
         </table>
-        <div class="sum">SUM: <span class="modal_cart_sum">1200</span></div>
+        <div class="sum">SUM: <span class="modal_cart_sum">${ price }</span></div>
         <div class="cart_buttons">
-            <button>Clear</button><button>Buy</button>
+            <button class="btn_modal_clear">Clear</button>
+            <button class="btn_modal_buy">Buy</button>
         </div>
-    </div>`
+    </div>`;
+
+        this.addModalListeners();
+    }
+
+    addModalListeners(){
+        const { close, clear, buy } = this.listeners;
+        this.modalWindow.querySelector('.btn_modal_close').addEventListener('click', close);
+        this.modalWindow.querySelector('.btn_modal_clear').addEventListener('click', clear);
+        this.modalWindow.querySelector('.btn_modal_buy').addEventListener('click', buy);
     }
 
     renderProduct(prod, pid){
@@ -37,5 +50,9 @@ export default class ViewCart{
         <td>${ price }</td>
         <td><input type="number" min="0" class="inp_product_cart" value="${ count || 0 }"></td>
     </tr>`
+    }
+
+    closeModal(){
+        this.modalWindow.classList.add(this.closeClass);
     }
 }

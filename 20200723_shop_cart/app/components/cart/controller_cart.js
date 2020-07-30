@@ -5,7 +5,7 @@ export default class ControllerCart{
     constructor({ subscribe, publish }){
 
         this.model = new ModelCart();
-        this.view = new ViewCart(this.handleOpenModal);
+        this.view = new ViewCart(this.listeners);
 
         this.subscribe = subscribe;
         this.publish = publish;
@@ -17,16 +17,37 @@ export default class ControllerCart{
         const count = this.model.addToCart(id);
         this.view.renderCartCount(count);
     }
-
-    handleOpenModal = () => {
-        const ids = this.model.getCartProdId();
-        this.publish('GET_PRODUCTS_TO_CART', ids);
-
-        
-    }
-
+    
     handleGetProducts = (products) => {
         const prods = this.model.updateProds(products);
         this.view.renderModal(prods);
+    }
+
+    handleOpenModal = () => {
+        const ids = this.model.getCartProdId();
+        this.publish('GET_PRODUCTS_TO_CART', ids);  
+    }    
+
+    handleCloseModal = () => {
+        this.view.closeModal();
+    }
+
+    handleClearCart = () => {
+        this.model.clearCart();
+        this.view.closeModal();
+        this.view.renderCartCount(0);
+    }
+
+    handleBuyCart = () => {
+        console.log('buy cart');
+    }
+
+    get listeners(){
+        return {
+            open : this.handleOpenModal,
+            close : this.handleCloseModal,
+            clear : this.handleClearCart,
+            buy : this.handleBuyCart
+        }
     }
 }

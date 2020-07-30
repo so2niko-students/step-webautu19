@@ -24,10 +24,21 @@ export default class ModelCart{
         return [ ...this.cart.keys() ];
     }
 
-    updateProds(products){
-        return products.map(prod => {
+    updateProds(prods){
+        let price = 0;
+        const products = prods.map(prod => {
             prod.count = this.cart.get(prod.id);
+            price += prod.count * prod.price;
             return prod;
         });
+
+        return {
+            price, 
+            products
+        };
+    }
+
+    clearCart(){
+        this.cart.clear();
     }
 }

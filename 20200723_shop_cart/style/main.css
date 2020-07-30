@@ -58,6 +58,12 @@ body{
 
 .modal .modal_cart{
     background-color: cornsilk;
+    min-width: 300px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .modal table{
@@ -70,7 +76,7 @@ body{
 }
 
 .modal .inp_product_cart{
-    width: 50px;
+    width: 30px;
 }
 
 .close{
