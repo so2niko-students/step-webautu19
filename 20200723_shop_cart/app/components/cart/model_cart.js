@@ -1,4 +1,5 @@
 export default class ModelCart{
+    //TODO: save cart between page reloading
     cart = new Map();
     constructor(){
 
@@ -32,6 +33,8 @@ export default class ModelCart{
             return prod;
         });
 
+        this.cartProducts = products;
+
         return {
             price, 
             products
@@ -40,5 +43,9 @@ export default class ModelCart{
 
     clearCart(){
         this.cart.clear();
+    }
+
+    getCartProducts(){
+        return this.cartProducts;
     }
 }

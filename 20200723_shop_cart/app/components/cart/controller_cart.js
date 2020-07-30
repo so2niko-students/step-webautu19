@@ -39,7 +39,7 @@ export default class ControllerCart{
     }
 
     handleBuyCart = () => {
-        console.log('buy cart');
+        this.publish('BUY', this.model.getCartProducts());
     }
 
     get listeners(){
