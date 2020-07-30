@@ -72,3 +72,7 @@ body{
 .modal .inp_product_cart{
     width: 50px;
 }
+
+.close{
+    display: none;
+}

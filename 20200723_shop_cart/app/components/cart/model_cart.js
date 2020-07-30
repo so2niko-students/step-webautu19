@@ -1,11 +1,33 @@
 export default class ModelCart{
-    cart = [];
+    cart = new Map();
     constructor(){
 
     }
 
     addToCart(id){
-        this.cart.push(id);
-        return this.cart.length;
+        let count = 1;
+        if(this.cart.has(id)){
+            count += this.cart.get(id);
+        }
+
+        this.cart.set(id, count);
+        return this.countCart();
+    }
+
+    countCart(){
+        let sum = 0;
+        this.cart.forEach(count => sum += count);
+        return sum;
+    }
+
+    getCartProdId(){
+        return [ ...this.cart.keys() ];
+    }
+
+    updateProds(products){
+        return products.map(prod => {
+            prod.count = this.cart.get(prod.id);
+            return prod;
+        });
     }
 }

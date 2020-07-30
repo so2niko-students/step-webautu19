@@ -34,4 +34,8 @@ export default class ModelProduct{
 
         localStorage.setItem('products', JSON.stringify(this.products));
     }
+
+    getProductsByIds(ids){
+        return this.products.filter(product => ids.includes(product.id));
+    }
 }
