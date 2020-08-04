@@ -1,11 +1,6 @@
 export default class ModelForm{
     products = [];
-    botUrl = 'https://api.telegram.org/bot1362251820:AAHlMA0ngWHlz123TRJlTfmkBiZVVetf-h0/sendMessage?parse_mode=MarkdownV2&chat_id='
-    chatId = '-353593305';
-
-    constructor(){
-
-    }
+    botUrl = 'https://script.google.com/macros/s/AKfycbwBQ17ypLfL1L1dw_QibRi1nU1Km8PAuJuzc7p_7BGLV8IaSNw/exec'
 
     setProductCart(products){
         this.products = products;
@@ -22,8 +17,10 @@ export default class ModelForm{
         const email2 = email.replace(/\./g, '\\.');
         console.log(email2);
         
-        const url = `${ this.botUrl }${ this.chatId }&text=\*email\*: ${ email2 }; \*name\*: ${ name }; \*tel\*: ${ tel }; \*products\*: ${ products }`;
-        fetch(url);
+        const url = `${ this.botUrl }?email=${ email2 }&name=${ name }&tel=${ tel }&products=${ products }`;
+        fetch(url, { mode : 'no-cors' });
+        //TODO: решить проблему с отправкой с гугл-апп скрипта
         //TODO: доформатировать текст
     }
 }
+//https://script.google.com/macros/s/AKfycbzkX0efYKewlji6FH6HCZBW1g0oDIV5j20ATh8N/exec

@@ -20,5 +20,6 @@ export default class ControllerForm{
     handleOrder = (ev) => {
         const userData = this.view.getData(ev);
         this.model.sendOrder(userData);
+        this.view.closeModal();
     }
 }

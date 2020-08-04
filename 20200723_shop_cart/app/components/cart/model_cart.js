@@ -1,5 +1,4 @@
 export default class ModelCart{
-    //TODO: save cart between page reloading
     cart = new Map();
     constructor(){
         const lsData = localStorage.getItem('cart');
