@@ -2,7 +2,11 @@ export default class ModelCart{
     //TODO: save cart between page reloading
     cart = new Map();
     constructor(){
-
+        const lsData = localStorage.getItem('cart');
+        console.log(lsData);
+        if(lsData){
+            this.cart = new Map(JSON.parse(lsData));
+        }
     }
 
     addToCart(id){
@@ -12,12 +16,13 @@ export default class ModelCart{
         }
 
         this.cart.set(id, count);
-        return this.countCart();
+
+        localStorage.setItem('cart', JSON.stringify([ ...this.cart ]));
     }
 
     countCart(){
         let sum = 0;
-        this.cart.forEach(count => sum += count);
+        this.cart.forEach(count => sum += +count);
         return sum;
     }
 
@@ -43,6 +48,7 @@ export default class ModelCart{
 
     clearCart(){
         this.cart.clear();
+        localStorage.removeItem('cart');
     }
 
     getCartProducts(){
@@ -56,6 +62,8 @@ export default class ModelCart{
             this.cart.delete(id);
             this.cartProducts = this.cartProducts.filter(prod => prod.id != id);
         }
+
+        localStorage.setItem('cart', JSON.stringify([ ...this.cart ]));
         
         return this.updateProds(this.cartProducts);
     }

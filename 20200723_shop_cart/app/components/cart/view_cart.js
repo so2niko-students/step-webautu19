@@ -10,7 +10,7 @@ export default class ViewCart{
     }
 
     renderCartCount(count){
-        this.domCartCount.innerText = count;
+        this.domCartCount.innerText = count == 0 ? '': count;
     }
 
     renderModal({ products, price}){

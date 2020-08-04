@@ -11,11 +11,19 @@ export default class ControllerCart{
         this.publish = publish;
         this.subscribe('ADD_TO_CART', this.handleAddToCart);
         this.subscribe('SET_PRODUCTS_TO_CART', this.handleGetProducts);
+
+        this.updateCartCount();
     }
 
+
     handleAddToCart = (id) => {
-        const count = this.model.addToCart(id);
-        this.view.renderCartCount(count);
+        this.model.addToCart(id);
+        this.updateCartCount();
+    }
+
+    updateCartCount(){
+        const cartCount = this.model.countCart();
+        this.view.renderCartCount(cartCount);
     }
     
     handleGetProducts = (products) => {
@@ -43,11 +51,11 @@ export default class ControllerCart{
     }
 
     handleChangeProdCount = ev => {
-        console.log(ev);//value, dataset.id
         const value = ev.target.value;
         const id = ev.target.dataset.id;
         const products = this.model.changeCount(id, value);
         this.view.renderModal(products);
+        this.updateCartCount();
     }
 
     get listeners(){
