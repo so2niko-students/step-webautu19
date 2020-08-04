@@ -42,12 +42,21 @@ export default class ControllerCart{
         this.publish('BUY', this.model.getCartProducts());
     }
 
+    handleChangeProdCount = ev => {
+        console.log(ev);//value, dataset.id
+        const value = ev.target.value;
+        const id = ev.target.dataset.id;
+        const products = this.model.changeCount(id, value);
+        this.view.renderModal(products);
+    }
+
     get listeners(){
         return {
             open : this.handleOpenModal,
             close : this.handleCloseModal,
             clear : this.handleClearCart,
-            buy : this.handleBuyCart
+            buy : this.handleBuyCart,
+            count : this.handleChangeProdCount
         }
     }
 }

@@ -48,4 +48,15 @@ export default class ModelCart{
     getCartProducts(){
         return this.cartProducts;
     }
+
+    changeCount(id, val){
+        if(val > 0){
+            this.cart.set(id, val);
+        }else{
+            this.cart.delete(id);
+            this.cartProducts = this.cartProducts.filter(prod => prod.id != id);
+        }
+        
+        return this.updateProds(this.cartProducts);
+    }
 }

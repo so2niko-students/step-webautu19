@@ -38,4 +38,5 @@ export default class ModelProduct{
     getProductsByIds(ids){
         return this.products.filter(product => ids.includes(product.id));
     }
+
 }

@@ -36,19 +36,22 @@ export default class ViewCart{
     }
 
     addModalListeners(){
-        const { close, clear, buy } = this.listeners;
+        const { close, clear, buy, count } = this.listeners;
+
         this.modalWindow.querySelector('.btn_modal_close').addEventListener('click', close);
         this.modalWindow.querySelector('.btn_modal_clear').addEventListener('click', clear);
         this.modalWindow.querySelector('.btn_modal_buy').addEventListener('click', buy);
+
+        this.modalWindow.querySelectorAll('input').forEach(el => el.addEventListener('input', count));
     }
 
     renderProduct(prod, pid){
-        const { title, price, count } = prod;
+        const { title, price, count, id } = prod;
         return `<tr>
         <td>${ pid + 1 }</td>
         <td>${ title }</td>
         <td>${ price }</td>
-        <td><input type="number" min="0" class="inp_product_cart" value="${ count || 0 }"></td>
+        <td><input type="number" min="0" class="inp_product_cart" value="${ count || 1 }" data-id="${ id }"></td>
     </tr>`
     }
 

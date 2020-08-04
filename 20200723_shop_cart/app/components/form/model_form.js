@@ -24,7 +24,6 @@ export default class ModelForm{
         
         const url = `${ this.botUrl }${ this.chatId }&text=\*email\*: ${ email2 }; \*name\*: ${ name }; \*tel\*: ${ tel }; \*products\*: ${ products }`;
         fetch(url);
+        //TODO: доформатировать текст
     }
 }
-
-//https://api.telegram.org/bot1362251820:AAHlMA0ngWHlz123TRJlTfmkBiZVVetf-h0/sendMessage?chat_id=-353593305&text=hello
