@@ -2,15 +2,16 @@ import ModelCart from "./model_cart.js";
 import ViewCart from "./view_cart.js";
 
 export default class ControllerCart{
-    constructor({ subscribe, publish }){
+    constructor({ subscribe, publish, events }){
 
         this.model = new ModelCart();
         this.view = new ViewCart(this.listeners);
 
         this.subscribe = subscribe;
         this.publish = publish;
-        this.subscribe('ADD_TO_CART', this.handleAddToCart);
-        this.subscribe('SET_PRODUCTS_TO_CART', this.handleGetProducts);
+        this.events = events;
+        this.subscribe(events.ADD_TO_CART, this.handleAddToCart);
+        this.subscribe(events.SET_PRODUCTS_TO_CART, this.handleGetProducts);
 
         this.updateCartCount();
     }
@@ -33,7 +34,7 @@ export default class ControllerCart{
 
     handleOpenModal = () => {
         const ids = this.model.getCartProdId();
-        this.publish('GET_PRODUCTS_TO_CART', ids);  
+        this.publish(this.events.GET_PRODUCTS_TO_CART, ids);  
     }    
 
     handleCloseModal = () => {
@@ -47,7 +48,7 @@ export default class ControllerCart{
     }
 
     handleBuyCart = () => {
-        this.publish('BUY', this.model.getCartProducts());
+        this.publish(this.events.BUY, this.model.getCartProducts());
     }
 
     handleChangeProdCount = ev => {
@@ -60,11 +61,11 @@ export default class ControllerCart{
 
     get listeners(){
         return {
-            open : this.handleOpenModal,
-            close : this.handleCloseModal,
-            clear : this.handleClearCart,
-            buy : this.handleBuyCart,
-            count : this.handleChangeProdCount
+            open    : this.handleOpenModal,
+            close   : this.handleCloseModal,
+            clear   : this.handleClearCart,
+            buy     : this.handleBuyCart,
+            count   : this.handleChangeProdCount
         }
     }
 }

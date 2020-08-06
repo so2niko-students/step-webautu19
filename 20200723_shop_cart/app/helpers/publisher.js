@@ -1,3 +1,5 @@
+import events from './events.js';
+
 export default class Publisher{
     events = {};
 
@@ -20,7 +22,8 @@ export default class Publisher{
     get methods(){
         return {
             subscribe : this.subscribe,
-            publish : this.publish
+            publish : this.publish,
+            events : events
         };
     }
 }

@@ -2,14 +2,13 @@ import ModelForm from "./model_form.js";
 import ViewForm from "./view_form.js";
 
 export default class ControllerForm{
-    constructor({ subscribe, publish }){
+    constructor({ subscribe, events }){
         this.model = new ModelForm();
         this.view = new ViewForm(this.handleOrder);
 
         this.subscribe = subscribe;
-        this.publish = publish;
 
-        this.subscribe('BUY', this.handleBuy);
+        this.subscribe(events.BUY, this.handleBuy);
     }
 
     handleBuy = (products) => {
