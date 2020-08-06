@@ -97,3 +97,15 @@ body{
     cursor: pointer;
     color: wheat;
 }
+
+.notification{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    color: wheat;
+}
+
+.notification strong{
+    padding: 15px;
+    background-color: tomato;
+}

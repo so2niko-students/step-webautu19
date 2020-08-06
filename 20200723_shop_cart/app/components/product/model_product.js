@@ -27,7 +27,7 @@ export default class ModelProduct{
             
             const prod = prodProps.reduce((acc, prop, i) => {
                 const name = names[i];
-                acc[name] = prop;
+                acc[name] = prop.trim();
                 return acc;
             }, {});
 
@@ -42,7 +42,7 @@ export default class ModelProduct{
     searchCategories(){
         this.categories = new Set();
         this.products.forEach(prod => {
-            this.categories.add(prod.category.trim());
+            this.categories.add(prod.category);
         });
 
         return this.categories;
@@ -50,6 +50,13 @@ export default class ModelProduct{
 
     getProductsByIds(ids){
         return this.products.filter(product => ids.includes(product.id));
+    }
+
+    getProductsByCategory(category){
+        if(category === 'all'){
+            return this.products;
+        }
+        return this.products.filter(product => product.category === category);
     }
 
 }

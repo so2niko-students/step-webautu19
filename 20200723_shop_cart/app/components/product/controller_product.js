@@ -10,6 +10,7 @@ export default class ControllerProduct{
         this.subscribe = subscribe;
 
         this.subscribe('GET_PRODUCTS_TO_CART', this.handleGetProducts);
+        this.subscribe('CHANGE_CATEGORY', this.handleChangeCategory);
 
         this.loadProducts();        
     }
@@ -25,7 +26,6 @@ export default class ControllerProduct{
     handleClickBuyProduct = ev => {
         const id = ev.target.dataset.productId;
         if(id){
-            console.log(`Купили ${id}`);
             this.publish('ADD_TO_CART', id);
         }
     }
@@ -33,5 +33,11 @@ export default class ControllerProduct{
     handleGetProducts = (ids) => {
         const products = this.model.getProductsByIds(ids);
         this.publish('SET_PRODUCTS_TO_CART', products);
+    }
+
+    handleChangeCategory = cat => {
+        const products = this.model.getProductsByCategory(cat);
+
+        this.view.render(products);       
     }
 }

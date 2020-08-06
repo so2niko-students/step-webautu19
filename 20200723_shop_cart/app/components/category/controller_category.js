@@ -18,7 +18,10 @@ export default class ControllerCategory{
     }
 
     handleClickCategory = ev => {
-        console.log(ev.target.dataset.category);
+        const cat = ev.target.dataset.category;
+        if(cat){
+            this.publish('CHANGE_CATEGORY', cat);
+        }
     }
 
 }
