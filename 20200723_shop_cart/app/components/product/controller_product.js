@@ -17,6 +17,9 @@ export default class ControllerProduct{
     async loadProducts(){
         const products = await this.model.loadProducts();
         this.view.render(products);
+
+        const categories = this.model.searchCategories();
+        this.publish('LOAD_CATEGORIES', categories);
     }
 
     handleClickBuyProduct = ev => {

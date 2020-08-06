@@ -82,3 +82,18 @@ body{
 .close{
     display: none;
 }
+
+.categories{
+    font-size: 18pt;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.categories .categories_name{
+    padding: 15px 5px;
+}
+
+.categories .categories_name:hover{
+    background-color: darkcyan;
+    cursor: pointer;
+    color: wheat;
+}

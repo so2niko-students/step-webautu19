@@ -1,8 +1,10 @@
 export default class ModelProduct{
-    url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQHE_4ujFb21ZMuAIS3_Qt5dU-segtmnphHBOsp5NAgbH0xCeqCBovNXciME4PE-HFyQES9uJWEEnpf/pub?gid=513180952&single=true&output=tsv';
+    // url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQHE_4ujFb21ZMuAIS3_Qt5dU-segtmnphHBOsp5NAgbH0xCeqCBovNXciME4PE-HFyQES9uJWEEnpf/pub?gid=513180952&single=true&output=tsv';
+    
+    url = './data/shop.tsv';
 
     constructor(){
-
+        console.log('ModelProduct', this);
     }
 
     async loadProducts(){
@@ -32,7 +34,18 @@ export default class ModelProduct{
             return prod;
         });
 
+        this.searchCategories(this.products);
+
         localStorage.setItem('products', JSON.stringify(this.products));
+    }
+
+    searchCategories(){
+        this.categories = new Set();
+        this.products.forEach(prod => {
+            this.categories.add(prod.category.trim());
+        });
+
+        return this.categories;
     }
 
     getProductsByIds(ids){
