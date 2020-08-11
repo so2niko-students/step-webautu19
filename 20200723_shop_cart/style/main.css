@@ -100,12 +100,18 @@ body{
 
 .notification{
     position: fixed;
-    bottom: 0;
+    bottom: -55px;
     right: 0;
     color: wheat;
+    height: 40px;
+    transition: bottom 2s;
 }
 
 .notification strong{
     padding: 15px;
     background-color: tomato;
+}
+
+.notification.show_notification{
+    bottom: 0;
 }
