@@ -6,7 +6,7 @@ export default class ViewNotification{
         this.notificationDOM.innerHTML = '<strong>ДОБАВЛЕН В КОРЗИНУ</strong>';
         this.notificationDOM.classList.add(this.showClass);
 
-        setTimeout(() => this.notificationDOM.classList.remove(this.showClass) = '', 4000);
+        setTimeout(() => this.notificationDOM.classList.remove(this.showClass), 4000);
     }
     /**
      * 2sec - up
